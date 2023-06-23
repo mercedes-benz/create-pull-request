@@ -12,6 +12,7 @@ inputs:
     description: >
       A comma or newline-separated list of options to add to the `git add` command.
       e.g. `--force`
+      Might require add-paths to be specified (when e.g. `--force` is used).
       Defaults to use no additional options.
   add-paths:
     description: >

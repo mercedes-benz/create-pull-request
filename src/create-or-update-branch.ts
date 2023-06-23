@@ -148,7 +148,7 @@ export async function createOrUpdateBranch(
   const tempBranch = uuidv4()
   await git.checkout(tempBranch, 'HEAD')
   // Commit any uncommitted changes
-  if (await git.isDirty(true, addPaths)) {
+  if (await git.isDirty(true, addPaths, addOptions)) {
     core.info('Uncommitted changes found. Adding a commit.')
     const aopts = ['add']
     if (addOptions.length > 0) {

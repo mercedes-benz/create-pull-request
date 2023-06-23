@@ -163,7 +163,11 @@ export class GitCommandManager {
     return output.exitCode === 1
   }
 
-  async isDirty(untracked: boolean, pathspec?: string[]): Promise<boolean> {
+  async isDirty(
+    untracked: boolean,
+    pathspec?: string[],
+    addOptions?: string[]
+  ): Promise<boolean> {
     const pathspecArgs = pathspec ? ['--', ...pathspec] : []
     // Check untracked changes
     const sargs = ['--porcelain', '-unormal']
@@ -180,6 +184,12 @@ export class GitCommandManager {
     dargs.push(...pathspecArgs)
     if (await this.hasDiff(dargs)) {
       return true
+    }
+    // Check if force adding is enabled
+    if (addOptions) {
+      if (addOptions.includes('--force') || addOptions.includes('-f')) {
+        return true
+      }
     }
     return false
   }
