@@ -25,6 +25,8 @@ const BASE = DEFAULT_BRANCH
 const FORK_REMOTE_URL = 'git://127.0.0.1/test-fork.git'
 const FORK_REMOTE_NAME = 'fork'
 
+const ADD_OPTIONS_DEFAULT = []
+
 const ADD_PATHS_DEFAULT = []
 const ADD_PATHS_MULTI = ['a', 'b']
 const ADD_PATHS_WILDCARD = ['a/*.txt', 'b/*.txt']
@@ -226,7 +228,8 @@ describe('create-or-update-branch tests', () => {
       BRANCH,
       REMOTE_NAME,
       false,
-      ADD_PATHS_DEFAULT
+      ADD_PATHS_DEFAULT,
+      ADD_OPTIONS_DEFAULT
     )
     expect(result.action).toEqual('none')
     expect(await gitLogMatches([INIT_COMMIT_MESSAGE])).toBeTruthy()
@@ -243,7 +246,8 @@ describe('create-or-update-branch tests', () => {
       BRANCH,
       REMOTE_NAME,
       false,
-      ADD_PATHS_DEFAULT
+      ADD_PATHS_DEFAULT,
+      ADD_OPTIONS_DEFAULT
     )
     await git.checkout(BRANCH)
     expect(result.action).toEqual('created')
@@ -272,7 +276,8 @@ describe('create-or-update-branch tests', () => {
       BRANCH,
       REMOTE_NAME,
       false,
-      ADD_PATHS_DEFAULT
+      ADD_PATHS_DEFAULT,
+      ADD_OPTIONS_DEFAULT
     )
     await git.checkout(BRANCH)
     expect(_result.action).toEqual('updated')
@@ -294,7 +299,8 @@ describe('create-or-update-branch tests', () => {
       BRANCH,
       REMOTE_NAME,
       false,
-      ADD_PATHS_DEFAULT
+      ADD_PATHS_DEFAULT,
+      ADD_OPTIONS_DEFAULT
     )
     await git.checkout(BRANCH)
     expect(result.action).toEqual('created')
@@ -323,7 +329,8 @@ describe('create-or-update-branch tests', () => {
       BRANCH,
       REMOTE_NAME,
       false,
-      ADD_PATHS_DEFAULT
+      ADD_PATHS_DEFAULT,
+      ADD_OPTIONS_DEFAULT
     )
     await git.checkout(BRANCH)
     expect(_result.action).toEqual('updated')
@@ -347,7 +354,8 @@ describe('create-or-update-branch tests', () => {
       BRANCH,
       REMOTE_NAME,
       false,
-      ADD_PATHS_DEFAULT
+      ADD_PATHS_DEFAULT,
+      ADD_OPTIONS_DEFAULT
     )
     await git.checkout(BRANCH)
     expect(result.action).toEqual('created')
@@ -377,7 +385,8 @@ describe('create-or-update-branch tests', () => {
       BRANCH,
       REMOTE_NAME,
       false,
-      ADD_PATHS_DEFAULT
+      ADD_PATHS_DEFAULT,
+      ADD_OPTIONS_DEFAULT
     )
     await git.checkout(BRANCH)
     expect(_result.action).toEqual('not-updated')
@@ -399,7 +408,8 @@ describe('create-or-update-branch tests', () => {
       BRANCH,
       REMOTE_NAME,
       false,
-      ADD_PATHS_DEFAULT
+      ADD_PATHS_DEFAULT,
+      ADD_OPTIONS_DEFAULT
     )
     await git.checkout(BRANCH)
     expect(result.action).toEqual('created')
@@ -437,7 +447,8 @@ describe('create-or-update-branch tests', () => {
       BRANCH,
       REMOTE_NAME,
       false,
-      ADD_PATHS_DEFAULT
+      ADD_PATHS_DEFAULT,
+      ADD_OPTIONS_DEFAULT
     )
     await git.checkout(BRANCH)
     expect(_result.action).toEqual('updated')
@@ -469,7 +480,8 @@ describe('create-or-update-branch tests', () => {
       BRANCH,
       REMOTE_NAME,
       false,
-      ADD_PATHS_DEFAULT
+      ADD_PATHS_DEFAULT,
+      ADD_OPTIONS_DEFAULT
     )
     await git.checkout(BRANCH)
     expect(result.action).toEqual('created')
@@ -498,7 +510,8 @@ describe('create-or-update-branch tests', () => {
       BRANCH,
       REMOTE_NAME,
       false,
-      ADD_PATHS_DEFAULT
+      ADD_PATHS_DEFAULT,
+      ADD_OPTIONS_DEFAULT
     )
     await git.checkout(BRANCH)
     expect(_result.action).toEqual('updated')
@@ -520,7 +533,8 @@ describe('create-or-update-branch tests', () => {
       BRANCH,
       REMOTE_NAME,
       false,
-      ADD_PATHS_DEFAULT
+      ADD_PATHS_DEFAULT,
+      ADD_OPTIONS_DEFAULT
     )
     await git.checkout(BRANCH)
     expect(result.action).toEqual('created')
@@ -561,7 +575,8 @@ describe('create-or-update-branch tests', () => {
       BRANCH,
       REMOTE_NAME,
       false,
-      ADD_PATHS_DEFAULT
+      ADD_PATHS_DEFAULT,
+      ADD_OPTIONS_DEFAULT
     )
     await git.checkout(BRANCH)
     expect(_result.action).toEqual('updated')
@@ -589,7 +604,8 @@ describe('create-or-update-branch tests', () => {
       BRANCH,
       REMOTE_NAME,
       false,
-      ADD_PATHS_DEFAULT
+      ADD_PATHS_DEFAULT,
+      ADD_OPTIONS_DEFAULT
     )
     await git.checkout(BRANCH)
     expect(result.action).toEqual('created')
@@ -633,7 +649,8 @@ describe('create-or-update-branch tests', () => {
       BRANCH,
       REMOTE_NAME,
       false,
-      ADD_PATHS_DEFAULT
+      ADD_PATHS_DEFAULT,
+      ADD_OPTIONS_DEFAULT
     )
     await git.checkout(BRANCH)
     expect(_result.action).toEqual('updated')
@@ -659,7 +676,8 @@ describe('create-or-update-branch tests', () => {
       BRANCH,
       REMOTE_NAME,
       false,
-      ADD_PATHS_DEFAULT
+      ADD_PATHS_DEFAULT,
+      ADD_OPTIONS_DEFAULT
     )
     await git.checkout(BRANCH)
     expect(result.action).toEqual('created')
@@ -698,7 +716,8 @@ describe('create-or-update-branch tests', () => {
       BRANCH,
       REMOTE_NAME,
       false,
-      ADD_PATHS_DEFAULT
+      ADD_PATHS_DEFAULT,
+      ADD_OPTIONS_DEFAULT
     )
     await git.checkout(BRANCH)
     expect(_result.action).toEqual('updated')
@@ -721,7 +740,8 @@ describe('create-or-update-branch tests', () => {
       BRANCH,
       REMOTE_NAME,
       false,
-      ADD_PATHS_DEFAULT
+      ADD_PATHS_DEFAULT,
+      ADD_OPTIONS_DEFAULT
     )
     await git.checkout(BRANCH)
     expect(result.action).toEqual('created')
@@ -753,7 +773,8 @@ describe('create-or-update-branch tests', () => {
       BRANCH,
       REMOTE_NAME,
       false,
-      ADD_PATHS_DEFAULT
+      ADD_PATHS_DEFAULT,
+      ADD_OPTIONS_DEFAULT
     )
     await git.checkout(BRANCH)
     expect(_result.action).toEqual('updated')
@@ -780,7 +801,8 @@ describe('create-or-update-branch tests', () => {
       BRANCH,
       REMOTE_NAME,
       false,
-      ADD_PATHS_DEFAULT
+      ADD_PATHS_DEFAULT,
+      ADD_OPTIONS_DEFAULT
     )
     await git.checkout(BRANCH)
     expect(result.action).toEqual('created')
@@ -816,7 +838,8 @@ describe('create-or-update-branch tests', () => {
       BRANCH,
       REMOTE_NAME,
       false,
-      ADD_PATHS_DEFAULT
+      ADD_PATHS_DEFAULT,
+      ADD_OPTIONS_DEFAULT
     )
     await git.checkout(BRANCH)
     expect(_result.action).toEqual('updated')
@@ -845,7 +868,8 @@ describe('create-or-update-branch tests', () => {
       BRANCH,
       REMOTE_NAME,
       false,
-      ADD_PATHS_DEFAULT
+      ADD_PATHS_DEFAULT,
+      ADD_OPTIONS_DEFAULT
     )
     await git.checkout(BRANCH)
     expect(result.action).toEqual('created')
@@ -889,7 +913,8 @@ describe('create-or-update-branch tests', () => {
       BRANCH,
       REMOTE_NAME,
       false,
-      ADD_PATHS_DEFAULT
+      ADD_PATHS_DEFAULT,
+      ADD_OPTIONS_DEFAULT
     )
     await git.checkout(BRANCH)
     expect(_result.action).toEqual('updated')
@@ -917,7 +942,8 @@ describe('create-or-update-branch tests', () => {
       BRANCH,
       FORK_REMOTE_NAME,
       false,
-      ADD_PATHS_DEFAULT
+      ADD_PATHS_DEFAULT,
+      ADD_OPTIONS_DEFAULT
     )
     await git.checkout(BRANCH)
     expect(result.action).toEqual('created')
@@ -947,7 +973,8 @@ describe('create-or-update-branch tests', () => {
       BRANCH,
       FORK_REMOTE_NAME,
       false,
-      ADD_PATHS_DEFAULT
+      ADD_PATHS_DEFAULT,
+      ADD_OPTIONS_DEFAULT
     )
     await git.checkout(BRANCH)
     expect(_result.action).toEqual('updated')
@@ -970,7 +997,8 @@ describe('create-or-update-branch tests', () => {
       BRANCH,
       REMOTE_NAME,
       true,
-      ADD_PATHS_DEFAULT
+      ADD_PATHS_DEFAULT,
+      ADD_OPTIONS_DEFAULT
     )
     await git.checkout(BRANCH)
     expect(result.action).toEqual('created')
@@ -1007,7 +1035,8 @@ describe('create-or-update-branch tests', () => {
       BRANCH,
       REMOTE_NAME,
       true,
-      ADD_PATHS_DEFAULT
+      ADD_PATHS_DEFAULT,
+      ADD_OPTIONS_DEFAULT
     )
     await git.checkout(BRANCH)
     expect(_result.action).toEqual('updated')
@@ -1037,7 +1066,8 @@ describe('create-or-update-branch tests', () => {
       BRANCH,
       REMOTE_NAME,
       false,
-      ADD_PATHS_MULTI
+      ADD_PATHS_MULTI,
+      ADD_OPTIONS_DEFAULT
     )
     await git.checkout(BRANCH)
     expect(result.action).toEqual('created')
@@ -1067,7 +1097,8 @@ describe('create-or-update-branch tests', () => {
       BRANCH,
       REMOTE_NAME,
       false,
-      ADD_PATHS_MULTI
+      ADD_PATHS_MULTI,
+      ADD_OPTIONS_DEFAULT
     )
     await git.checkout(BRANCH)
     expect(_result.action).toEqual('updated')
@@ -1090,7 +1121,8 @@ describe('create-or-update-branch tests', () => {
       BRANCH,
       REMOTE_NAME,
       false,
-      ADD_PATHS_WILDCARD
+      ADD_PATHS_WILDCARD,
+      ADD_OPTIONS_DEFAULT
     )
     await git.checkout(BRANCH)
     expect(result.action).toEqual('created')
@@ -1120,7 +1152,8 @@ describe('create-or-update-branch tests', () => {
       BRANCH,
       REMOTE_NAME,
       false,
-      ADD_PATHS_WILDCARD
+      ADD_PATHS_WILDCARD,
+      ADD_OPTIONS_DEFAULT
     )
     await git.checkout(BRANCH)
     expect(_result.action).toEqual('updated')
@@ -1143,7 +1176,8 @@ describe('create-or-update-branch tests', () => {
       BRANCH,
       REMOTE_NAME,
       false,
-      ['nonexistent/*']
+      ['nonexistent/*'],
+      ADD_OPTIONS_DEFAULT
     )
     await git.checkout(BRANCH)
     expect(result.action).toEqual('none')
@@ -1164,7 +1198,8 @@ describe('create-or-update-branch tests', () => {
       BRANCHA,
       REMOTE_NAME,
       false,
-      ['a']
+      ['a'],
+      ADD_OPTIONS_DEFAULT
     )
     const resultB = await createOrUpdateBranch(
       git,
@@ -1173,7 +1208,8 @@ describe('create-or-update-branch tests', () => {
       BRANCHB,
       REMOTE_NAME,
       false,
-      ['b']
+      ['b'],
+      ADD_OPTIONS_DEFAULT
     )
     await git.checkout(BRANCHA)
     expect(resultA.action).toEqual('created')
@@ -1208,7 +1244,8 @@ describe('create-or-update-branch tests', () => {
       BRANCH,
       REMOTE_NAME,
       false,
-      ADD_PATHS_DEFAULT
+      ADD_PATHS_DEFAULT,
+      ADD_OPTIONS_DEFAULT
     )
     await git.checkout(BRANCH)
     expect(result.action).toEqual('none')
@@ -1229,7 +1266,8 @@ describe('create-or-update-branch tests', () => {
       BRANCH,
       REMOTE_NAME,
       false,
-      ADD_PATHS_DEFAULT
+      ADD_PATHS_DEFAULT,
+      ADD_OPTIONS_DEFAULT
     )
     await git.checkout(BRANCH)
     expect(result.action).toEqual('created')
@@ -1261,7 +1299,8 @@ describe('create-or-update-branch tests', () => {
       BRANCH,
       REMOTE_NAME,
       false,
-      ADD_PATHS_DEFAULT
+      ADD_PATHS_DEFAULT,
+      ADD_OPTIONS_DEFAULT
     )
     await git.checkout(BRANCH)
     expect(_result.action).toEqual('updated')
@@ -1286,7 +1325,8 @@ describe('create-or-update-branch tests', () => {
       BRANCH,
       REMOTE_NAME,
       false,
-      ADD_PATHS_DEFAULT
+      ADD_PATHS_DEFAULT,
+      ADD_OPTIONS_DEFAULT
     )
     await git.checkout(BRANCH)
     expect(result.action).toEqual('created')
@@ -1318,7 +1358,8 @@ describe('create-or-update-branch tests', () => {
       BRANCH,
       REMOTE_NAME,
       false,
-      ADD_PATHS_DEFAULT
+      ADD_PATHS_DEFAULT,
+      ADD_OPTIONS_DEFAULT
     )
     await git.checkout(BRANCH)
     expect(_result.action).toEqual('updated')
@@ -1345,7 +1386,8 @@ describe('create-or-update-branch tests', () => {
       BRANCH,
       REMOTE_NAME,
       false,
-      ADD_PATHS_DEFAULT
+      ADD_PATHS_DEFAULT,
+      ADD_OPTIONS_DEFAULT
     )
     await git.checkout(BRANCH)
     expect(result.action).toEqual('created')
@@ -1378,7 +1420,8 @@ describe('create-or-update-branch tests', () => {
       BRANCH,
       REMOTE_NAME,
       false,
-      ADD_PATHS_DEFAULT
+      ADD_PATHS_DEFAULT,
+      ADD_OPTIONS_DEFAULT
     )
     await git.checkout(BRANCH)
     expect(_result.action).toEqual('not-updated')
@@ -1403,7 +1446,8 @@ describe('create-or-update-branch tests', () => {
       BRANCH,
       REMOTE_NAME,
       false,
-      ADD_PATHS_DEFAULT
+      ADD_PATHS_DEFAULT,
+      ADD_OPTIONS_DEFAULT
     )
     await git.checkout(BRANCH)
     expect(result.action).toEqual('created')
@@ -1444,7 +1488,8 @@ describe('create-or-update-branch tests', () => {
       BRANCH,
       REMOTE_NAME,
       false,
-      ADD_PATHS_DEFAULT
+      ADD_PATHS_DEFAULT,
+      ADD_OPTIONS_DEFAULT
     )
     await git.checkout(BRANCH)
     expect(_result.action).toEqual('updated')
@@ -1479,7 +1524,8 @@ describe('create-or-update-branch tests', () => {
       BRANCH,
       REMOTE_NAME,
       false,
-      ADD_PATHS_DEFAULT
+      ADD_PATHS_DEFAULT,
+      ADD_OPTIONS_DEFAULT
     )
     await git.checkout(BRANCH)
     expect(result.action).toEqual('created')
@@ -1511,7 +1557,8 @@ describe('create-or-update-branch tests', () => {
       BRANCH,
       REMOTE_NAME,
       false,
-      ADD_PATHS_DEFAULT
+      ADD_PATHS_DEFAULT,
+      ADD_OPTIONS_DEFAULT
     )
     await git.checkout(BRANCH)
     expect(_result.action).toEqual('updated')
@@ -1538,7 +1585,8 @@ describe('create-or-update-branch tests', () => {
       BRANCH,
       REMOTE_NAME,
       false,
-      ADD_PATHS_DEFAULT
+      ADD_PATHS_DEFAULT,
+      ADD_OPTIONS_DEFAULT
     )
     await git.checkout(BRANCH)
     expect(result.action).toEqual('created')
@@ -1582,7 +1630,8 @@ describe('create-or-update-branch tests', () => {
       BRANCH,
       REMOTE_NAME,
       false,
-      ADD_PATHS_DEFAULT
+      ADD_PATHS_DEFAULT,
+      ADD_OPTIONS_DEFAULT
     )
     await git.checkout(BRANCH)
     expect(_result.action).toEqual('updated')
@@ -1613,7 +1662,8 @@ describe('create-or-update-branch tests', () => {
       BRANCH,
       REMOTE_NAME,
       false,
-      ADD_PATHS_DEFAULT
+      ADD_PATHS_DEFAULT,
+      ADD_OPTIONS_DEFAULT
     )
     await git.checkout(BRANCH)
     expect(result.action).toEqual('created')
@@ -1660,7 +1710,8 @@ describe('create-or-update-branch tests', () => {
       BRANCH,
       REMOTE_NAME,
       false,
-      ADD_PATHS_DEFAULT
+      ADD_PATHS_DEFAULT,
+      ADD_OPTIONS_DEFAULT
     )
     await git.checkout(BRANCH)
     expect(_result.action).toEqual('updated')
@@ -1689,7 +1740,8 @@ describe('create-or-update-branch tests', () => {
       BRANCH,
       REMOTE_NAME,
       false,
-      ADD_PATHS_DEFAULT
+      ADD_PATHS_DEFAULT,
+      ADD_OPTIONS_DEFAULT
     )
     await git.checkout(BRANCH)
     expect(result.action).toEqual('created')
@@ -1731,7 +1783,8 @@ describe('create-or-update-branch tests', () => {
       BRANCH,
       REMOTE_NAME,
       false,
-      ADD_PATHS_DEFAULT
+      ADD_PATHS_DEFAULT,
+      ADD_OPTIONS_DEFAULT
     )
     await git.checkout(BRANCH)
     expect(_result.action).toEqual('updated')
@@ -1757,7 +1810,8 @@ describe('create-or-update-branch tests', () => {
       BRANCH,
       REMOTE_NAME,
       false,
-      ADD_PATHS_DEFAULT
+      ADD_PATHS_DEFAULT,
+      ADD_OPTIONS_DEFAULT
     )
     await git.checkout(BRANCH)
     expect(result.action).toEqual('created')
@@ -1792,7 +1846,8 @@ describe('create-or-update-branch tests', () => {
       BRANCH,
       REMOTE_NAME,
       false,
-      ADD_PATHS_DEFAULT
+      ADD_PATHS_DEFAULT,
+      ADD_OPTIONS_DEFAULT
     )
     await git.checkout(BRANCH)
     expect(_result.action).toEqual('updated')
@@ -1822,7 +1877,8 @@ describe('create-or-update-branch tests', () => {
       BRANCH,
       REMOTE_NAME,
       false,
-      ADD_PATHS_DEFAULT
+      ADD_PATHS_DEFAULT,
+      ADD_OPTIONS_DEFAULT
     )
     await git.checkout(BRANCH)
     expect(result.action).toEqual('created')
@@ -1861,7 +1917,8 @@ describe('create-or-update-branch tests', () => {
       BRANCH,
       REMOTE_NAME,
       false,
-      ADD_PATHS_DEFAULT
+      ADD_PATHS_DEFAULT,
+      ADD_OPTIONS_DEFAULT
     )
     await git.checkout(BRANCH)
     expect(_result.action).toEqual('updated')
@@ -1893,7 +1950,8 @@ describe('create-or-update-branch tests', () => {
       BRANCH,
       REMOTE_NAME,
       false,
-      ADD_PATHS_DEFAULT
+      ADD_PATHS_DEFAULT,
+      ADD_OPTIONS_DEFAULT
     )
     await git.checkout(BRANCH)
     expect(result.action).toEqual('created')
@@ -1940,7 +1998,8 @@ describe('create-or-update-branch tests', () => {
       BRANCH,
       REMOTE_NAME,
       false,
-      ADD_PATHS_DEFAULT
+      ADD_PATHS_DEFAULT,
+      ADD_OPTIONS_DEFAULT
     )
     await git.checkout(BRANCH)
     expect(_result.action).toEqual('updated')
@@ -1971,7 +2030,8 @@ describe('create-or-update-branch tests', () => {
       BRANCH,
       FORK_REMOTE_NAME,
       false,
-      ADD_PATHS_DEFAULT
+      ADD_PATHS_DEFAULT,
+      ADD_OPTIONS_DEFAULT
     )
     await git.checkout(BRANCH)
     expect(result.action).toEqual('created')
@@ -2004,7 +2064,8 @@ describe('create-or-update-branch tests', () => {
       BRANCH,
       FORK_REMOTE_NAME,
       false,
-      ADD_PATHS_DEFAULT
+      ADD_PATHS_DEFAULT,
+      ADD_OPTIONS_DEFAULT
     )
     await git.checkout(BRANCH)
     expect(_result.action).toEqual('updated')
@@ -2034,7 +2095,8 @@ describe('create-or-update-branch tests', () => {
       BRANCH,
       REMOTE_NAME,
       false,
-      ADD_PATHS_DEFAULT
+      ADD_PATHS_DEFAULT,
+      ADD_OPTIONS_DEFAULT
     )
     await git.checkout(BRANCH)
     expect(result.action).toEqual('created')
@@ -2068,7 +2130,8 @@ describe('create-or-update-branch tests', () => {
       BRANCH,
       REMOTE_NAME,
       false,
-      ADD_PATHS_DEFAULT
+      ADD_PATHS_DEFAULT,
+      ADD_OPTIONS_DEFAULT
     )
     await git.checkout(BRANCH)
     expect(_result.action).toEqual('updated')
@@ -2095,7 +2158,8 @@ describe('create-or-update-branch tests', () => {
       BRANCH,
       REMOTE_NAME,
       false,
-      ADD_PATHS_DEFAULT
+      ADD_PATHS_DEFAULT,
+      ADD_OPTIONS_DEFAULT
     )
     await git.checkout(BRANCH)
     expect(result.action).toEqual('created')
@@ -2137,7 +2201,8 @@ describe('create-or-update-branch tests', () => {
       BRANCH,
       REMOTE_NAME,
       false,
-      ADD_PATHS_DEFAULT
+      ADD_PATHS_DEFAULT,
+      ADD_OPTIONS_DEFAULT
     )
     await git.checkout(BRANCH)
     expect(_result.action).toEqual('updated')
@@ -2170,7 +2235,8 @@ describe('create-or-update-branch tests', () => {
       BRANCH,
       REMOTE_NAME,
       false,
-      ADD_PATHS_DEFAULT
+      ADD_PATHS_DEFAULT,
+      ADD_OPTIONS_DEFAULT
     )
     await git.checkout(BRANCH)
     // The action cannot successfully create the branch
@@ -2195,7 +2261,8 @@ describe('create-or-update-branch tests', () => {
       BRANCHA,
       REMOTE_NAME,
       false,
-      ['a']
+      ['a'],
+      ADD_OPTIONS_DEFAULT
     )
     const resultB = await createOrUpdateBranch(
       git,
@@ -2204,7 +2271,8 @@ describe('create-or-update-branch tests', () => {
       BRANCHB,
       REMOTE_NAME,
       false,
-      ['b']
+      ['b'],
+      ADD_OPTIONS_DEFAULT
     )
     await git.checkout(BRANCHA)
     expect(resultA.action).toEqual('created')
